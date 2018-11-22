@@ -1,20 +1,32 @@
 var hangman;
 
-// function Hangman() {
+function Hangman() {
+  this.words = ["hola","adios","Juan"];
+  this.secretWord = toString(this.getWord); //Arreglarlo más adelante
+}
 
-// }
+Hangman.prototype.getWord = function () {
+  var word = this.words[Math.floor(Math.random())];
+  return word;
+};
 
-// Hangman.prototype.getWord = function () {
+Hangman.prototype.checkIfLetter = function (keyCode) {
+  if((keyCode >= 65 && keyCode <= 90) || (keyCode >= 97 && keyCode <= 122)) {
+    return true
+  } else{
+   return false
+  }
+};
 
-// };
-
-// Hangman.prototype.checkIfLetter = function (keyCode) {
-
-// };
-
-// Hangman.prototype.checkClickedLetters = function (key) {
-
-// };
+Hangman.prototype.checkClickedLetters = function (key) {
+  this.letters.forEach(function(letter){
+    if(key === letter){
+      return true
+    }else{
+      return false
+    }
+  })
+};
 
 // Hangman.prototype.addCorrectLetter = function (i) {
 
