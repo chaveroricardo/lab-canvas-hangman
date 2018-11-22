@@ -3,6 +3,9 @@ var hangman;
 function Hangman() {
   this.words = ["hola","adios","Juan"];
   this.secretWord = toString(this.getWord); //Arreglarlo más adelante
+  this.letters = [];
+  this.guessedLetters = '';
+  this.errorsLeft = 10;
 }
 
 Hangman.prototype.getWord = function () {
